@@ -1,0 +1,101 @@
+﻿<!--<img src="assets/logo.png">
+
+<section *ngIf="article && article.creator">
+    <h1>{{article.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{
+article.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>-->
+
+<div  style="padding-top:100px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a class="navbar-brand">Student Information System</a>
+                      <ul class="nav navbar-nav">
+                            <li ><a [routerLink]="['/articles']"><i class="fa fa-list"></i>List Course</a></li>  
+                         <li ><a [routerLink]="['/articles/create']"><i class="fa fa-sign-in"></i>Create Course</a></li>                      
+ 
+                      </ul>
+                      <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                              <a class="nav-link" *ngIf="user"><i class="fa fa-sign-fun"></i>Login Name: {{user.fullName}}</a>
+                            </li>
+   
+                          </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+<section *ngIf="article && article.creator">
+        <div class="row">
+                <div class="col-md-offset-0 col-md-1">
+                                       
+                    
+                </div>
+                    
+                <div class="col-md-offset-1 col-md-9">
+                        <h2> LIST BY COURSE</h2>     
+                                    
+                    <div class='containerDecoration'>
+              
+                                 
+                        <div   class ="pre-scrollable" style="max-height:76vh">
+        <table align="center" class="table table-bordered table-striped table-hover">
+               
+
+                   
+                   <thead>
+                            <tr align="center">
+                                    <td><div> <label>Course Code</label></div></td>
+                                    <td><div><label>Course Name</label></div></td>
+                                    <td><div><label>Section</label></div></td>
+                                    <td><div><label>Semester</label></div></td>
+                                    <td><div><label>Creator</label></div></td>
+                                    <td><div><label>Delete</label></div></td>
+                                    <td><div><label>Edit</label></div></td>
+                                    
+
+                                </tr>
+                    </thead>
+                    <tbody>
+                            <tr align="center">
+                                   
+                                    <td><a [routerLink]="['/articles', article._id]">{{article.courseCode}}</a></td>
+                                        <td>{{article.courseName}}</td>
+                                            <td>{{article.section}}</td>
+                                                <td>{{article.semester}}</td>
+                                                <td>{{article.creator.fullName}}</td>
+                                             
+                                                <td><div *ngIf='user'><button  type="submit" (click)="delete()" class="btn btn-danger">Delete</button></div></td>
+                                                <td><div *ngIf='user'><button type="submit" [routerLink]="['/articles', article._id, 'edit']" class="btn btn-primary">Edit</button></div></td>
+                                            
+                            </tr>
+
+                    </tbody>
+    
+                    
+ 
+ 
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+                <td><div *ngIf='!user'> <h3 style="color:yellow">You are not loged in</h3> </div>
+  
+        </section>

@@ -1,0 +1,6 @@
+C:\Classes\COMP308\Examples\2017\CRUDAngular2Test\CRUDAngular2Test\obj\Debug\CRUDAngular2Test.njsprojResolveAssemblyReference.cache
+C:\Classes\COMP308\Examples\2017\CRUDAngular2Test\CRUDAngular2Test\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Classes\COMP308\Examples\2017\CRUDAngular2Test\CRUDAngular2Test\obj\Debug\CRUDAngular2Test.njsproj.CoreCompileInputs.cache
+C:\Classes\COMP308\Examples\2018\Week8\CRUDAngular2Test\CRUDAngular2Test\obj\Debug\CRUDAngular2Test.njsprojResolveAssemblyReference.cache
+C:\Classes\COMP308\Examples\2018\Week8\CRUDAngular2Test\CRUDAngular2Test\obj\Debug\CRUDAngular2Test.njsproj.CoreCompileInputs.cache
+C:\Classes\COMP308\Examples\2018\Week8\CRUDAngular2Test\CRUDAngular2Test\bin\Microsoft.NodejsTools.WebRole.dll

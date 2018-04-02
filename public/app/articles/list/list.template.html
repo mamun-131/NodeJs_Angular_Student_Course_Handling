@@ -1,0 +1,98 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand">Student Information System</a>
+              <ul class="nav navbar-nav">
+                    <li ><a [routerLink]="['/']"><i class="fa fa-sign-home"></i>Home</a></li>  
+                    <li ><a [routerLink]="['/articles']"><i class="fa fa-sign-in"></i>List Course</a></li>  
+                 <li ><a *ngIf="user" [routerLink]="['/articles/create']"><i class="fa fa-sign-in"></i>Create Course</a></li>                      
+
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" *ngIf="user"><i class="fa fa-sign-fun"></i>Login Name: {{user.fullName}}</a>
+                    </li>
+
+                  </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <p id="contactPara" style="padding-top: 70px;"> </p>
+<div class="container" >
+        
+        
+        
+<div class="row">
+    <div class="col-md-offset-0 col-md-1">
+                           
+        
+    </div>
+        
+    <div class="col-md-offset-1 col-md-9">
+            <h2> COURSE LIST</h2>     
+                        
+        <div class='containerDecoration'>
+  
+                     
+            <div   class ="pre-scrollable" style="max-height:76vh">
+
+
+
+                <table align="center" class="table table-bordered table-striped table-hover">
+               
+
+                   
+                   <thead>
+                            <tr align="center">
+                                    <td><div> <label>Course Code</label></div></td>
+                                    <td><div><label>Course Name</label></div></td>
+                                    <td><div><label>Section</label></div></td>
+                                    <td><div><label>Semester</label></div></td>
+                                    <td><div><label>Student</label></div></td>
+                                    <td><div><label>Edit/Delete</label></div></td>
+                                    
+                                    
+
+                                </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let article of articles" align="center">
+                                   
+                                   
+                                    <td><a [routerLink]="['/articles',article.courseCode,'viewByCourse']">{{article.courseCode}}</a></td>
+                                    <td>{{article.courseName}}</td>
+                                    <td>{{article.section}}</td>
+                                    <td>{{article.semester}}</td>
+                                    <td><a [routerLink]="['/articles',article.creator.idSeleted,'viewByStudent']">{{article.creator.fullName}}</a></td>
+                                    <td><a [routerLink]="['/articles', article._id]">Edit/Delete</a></td>           
+                                                
+                                                
+                                            
+                            </tr>
+
+                    </tbody>
+    
+                    
+ 
+ 
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+       
+
+
+
+<div *ngIf="articles && articles.length === 0">
+    No articles yet, why don't you <a [routerLink]="['/articles/
+create']">create one</a>?
+</div>

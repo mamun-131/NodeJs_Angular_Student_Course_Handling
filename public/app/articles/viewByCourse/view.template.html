@@ -1,0 +1,96 @@
+﻿<!--<img src="assets/logo.png">
+
+<section *ngIf="article && article.creator">
+    <h1>{{article.title}}</h1>
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Posted on {{article.created}} by {{
+article.creator.
+fullName
+            }}
+        </em>
+    </small>
+    <p>{{article.content}}</p>
+</section>-->
+
+<div  style="padding-top:100px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a class="navbar-brand">Student Information System</a>
+                      <ul class="nav navbar-nav">
+                            <li ><a [routerLink]="['/articles']"><i class="fa fa-list"></i>List Course</a></li>  
+                         <li ><a [routerLink]="['/articles/create']"><i class="fa fa-sign-in"></i>Create Course</a></li>                      
+ 
+                      </ul>
+                      <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                              <a class="nav-link" *ngIf="user"><i class="fa fa-sign-fun"></i>Login Name: {{user.fullName}}</a>
+                            </li>
+   
+                          </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+<!--<section *ngIf="article && article.creator">-->
+        <div class="row">
+                <div class="col-md-offset-0 col-md-1">
+                                       
+                    
+                </div>
+                    
+                <div class="col-md-offset-1 col-md-9">
+                        <h2> LIST BY COURSE</h2>     
+                                    
+                    <div class='containerDecoration'>
+              
+                                 
+                        <div   class ="pre-scrollable" style="max-height:76vh">
+        <table align="center" class="table table-bordered table-striped table-hover">
+               
+
+                   
+                   <thead>
+                            <tr align="center">
+                                    <td><div> <label>Course Code</label></div></td>
+                                    <td><div><label>Course Name</label></div></td>
+                                    <td><div><label>Section</label></div></td>
+                                    <td><div><label>Semester</label></div></td>
+                                    <td><div><label>Student</label></div></td>
+
+                                    
+
+                                </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let articl of article" align="center">
+                                   
+                                    <td>{{articl.courseCode}}</td>
+                                        <td>{{articl.courseName}}</td>
+                                            <td>{{articl.section}}</td>
+                                                <td>{{articl.semester}}</td>
+                                                <td>{{articl.creator.fullName}}</td>
+                                             
+                                                
+                            </tr>
+
+                    </tbody>
+    
+                    
+ 
+ 
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+       <!-- </section>-->

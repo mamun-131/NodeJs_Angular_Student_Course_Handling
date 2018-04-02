@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>CRUDAngular2Test</Name>
+    <RootNamespace>CRUDAngular2Test</RootNamespace>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <ToolsVersionPromptShown>0.0</ToolsVersionPromptShown>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>380f61c0-6122-42d8-9be9-2263c0dcfe67</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\controllers\articles.server.controller.js" />
+    <Compile Include="app\controllers\index.server.controller.js" />
+    <Compile Include="app\controllers\users.server.controller.js" />
+    <Compile Include="app\models\article.server.model.js" />
+    <Compile Include="app\models\user.server.model.js" />
+    <Compile Include="app\routes\articles.server.routes.js" />
+    <Compile Include="app\routes\index.server.routes.js" />
+    <Compile Include="app\routes\users.server.routes.js" />
+    <Compile Include="config\config.js" />
+    <Compile Include="config\env\development.js" />
+    <Compile Include="config\env\production.js" />
+    <Compile Include="config\env\test.js" />
+    <Compile Include="config\express.js" />
+    <Compile Include="config\mongoose.js" />
+    <Compile Include="config\passport.js" />
+    <Compile Include="config\strategies\facebook.js" />
+    <Compile Include="config\strategies\google.js" />
+    <Compile Include="config\strategies\local.js" />
+    <Compile Include="config\strategies\twitter.js" />
+    <Compile Include="public\app\app.component.js" />
+    <Compile Include="public\app\app.module.js" />
+    <Compile Include="public\app\app.routes.js" />
+    <Compile Include="public\app\authentication\authentication.component.js" />
+    <Compile Include="public\app\authentication\authentication.module.js" />
+    <Compile Include="public\app\authentication\authentication.routes.js" />
+    <Compile Include="public\app\authentication\authentication.service.js" />
+    <Compile Include="public\app\authentication\signin\signin.component.js" />
+    <Compile Include="public\app\authentication\signup\signup.component.js" />
+    <Compile Include="public\app\bootstrap.js" />
+    <Compile Include="public\app\home\home.component.js" />
+    <Compile Include="public\app\home\home.module.js" />
+    <Compile Include="public\app\home\home.routes.js" />
+    <Compile Include="public\systemjs.config.js" />
+    <Compile Include="server.js" />
+    <Content Include="app\views\index.ejs" />
+    <Content Include="package.json" />
+    <Content Include="public\app\app.component.js.map" />
+    <Content Include="public\app\app.module.js.map" />
+    <Content Include="public\app\app.routes.js.map" />
+    <Content Include="public\app\articles\create\create.template.html" />
+    <Content Include="public\app\articles\edit\edit.template.html" />
+    <Content Include="public\app\articles\list\list.template.html" />
+    <Content Include="public\app\articles\view\view.template.html" />
+    <Content Include="public\app\authentication\authentication.component.js.map" />
+    <Content Include="public\app\authentication\authentication.module.js.map" />
+    <Content Include="public\app\authentication\authentication.routes.js.map" />
+    <Content Include="public\app\authentication\authentication.service.js.map" />
+    <Content Include="public\app\authentication\authentication.template.html" />
+    <Content Include="public\app\authentication\authentication.template.css" />
+    <Content Include="public\assets\logo.png" />
+    <Content Include="public\app\authentication\signin\signin.component.js.map" />
+    <Content Include="public\app\authentication\signin\signin.template.html" />
+    <Content Include="public\app\authentication\signin\signin.template.css" />
+    <Content Include="public\app\authentication\signup\signup.template.css" />
+    <Content Include="public\app\authentication\signup\signup.component.js.map" />
+    <Content Include="public\app\authentication\signup\signup.template.html" />
+    <Content Include="public\app\bootstrap.js.map" />
+    <Content Include="public\app\home\home.component.js.map" />
+    <Content Include="public\app\home\home.module.js.map" />
+    <Content Include="public\app\home\home.routes.js.map" />
+    <Content Include="public\app\home\home.template.html" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\controllers\" />
+    <Folder Include="app\models\" />
+    <Folder Include="app\routes\" />
+    <Folder Include="app\views\" />
+    <Folder Include="config\" />
+    <Folder Include="config\env\" />
+    <Folder Include="config\strategies\" />
+    <Folder Include="public\" />
+    <Folder Include="public\app\" />
+    <Folder Include="public\app\articles\create\" />
+    <Folder Include="public\app\articles\edit\" />
+    <Folder Include="public\app\articles\list\" />
+    <Folder Include="public\app\articles\view\" />
+    <Folder Include="public\app\authentication\" />
+    <Folder Include="public\app\authentication\signin\" />
+    <Folder Include="public\app\authentication\signup\" />
+    <Folder Include="public\app\home\" />
+    <Folder Include="public\app\articles\" />
+    <Folder Include="public\assets\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\node\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="public\app\app.component.ts" />
+    <TypeScriptCompile Include="public\app\app.module.ts" />
+    <TypeScriptCompile Include="public\app\app.routes.ts" />
+    <TypeScriptCompile Include="public\app\articles\articles.component.ts" />
+    <TypeScriptCompile Include="public\app\articles\articles.module.ts" />
+    <TypeScriptCompile Include="public\app\articles\articles.routes.ts" />
+    <TypeScriptCompile Include="public\app\articles\articles.service.ts" />
+    <TypeScriptCompile Include="public\app\articles\create\create.component.ts" />
+    <TypeScriptCompile Include="public\app\articles\edit\edit.component.ts" />
+    <TypeScriptCompile Include="public\app\articles\list\list.component.ts" />
+    <TypeScriptCompile Include="public\app\articles\view\view.component.ts" />
+    <TypeScriptCompile Include="public\app\authentication\authentication.component.ts" />
+    <TypeScriptCompile Include="public\app\authentication\authentication.module.ts" />
+    <TypeScriptCompile Include="public\app\authentication\authentication.routes.ts" />
+    <TypeScriptCompile Include="public\app\authentication\authentication.service.ts" />
+    <TypeScriptCompile Include="public\app\authentication\signin\signin.component.ts" />
+    <TypeScriptCompile Include="public\app\authentication\signup\signup.component.ts" />
+    <TypeScriptCompile Include="public\app\bootstrap.ts" />
+    <TypeScriptCompile Include="public\app\home\home.component.ts" />
+    <TypeScriptCompile Include="public\app\home\home.module.ts" />
+    <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
