@@ -1,6 +1,6 @@
 ﻿const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const CourseSchema = new Schema({
+const ArticleSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
@@ -32,4 +32,4 @@ const CourseSchema = new Schema({
         ref: 'User'
     }
 });
-mongoose.model('Course', CourseSchema);
+mongoose.model('Article', ArticleSchema);

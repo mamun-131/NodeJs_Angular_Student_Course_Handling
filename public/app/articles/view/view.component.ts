@@ -19,7 +19,7 @@ export class ViewComponent {
         private _articlesService: ArticlesService) { }
     //
     ngOnInit() {
-        this.user = this._authenticationService.user
+        this.user = this._authenticationService.user;
         this.paramsObserver = this._route.params.subscribe(params => {
             let articleId = params['articleId'];
             this._articlesService

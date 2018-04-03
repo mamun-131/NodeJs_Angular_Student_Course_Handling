@@ -1,4 +1,4 @@
-System.register(["@angular/core", "../articles.service", "@angular/router"], function (exports_1, context_1) {
+System.register(["@angular/core", "../articles.service", "@angular/router", "../../authentication/authentication.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,7 +10,7 @@ System.register(["@angular/core", "../articles.service", "@angular/router"], fun
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, articles_service_1, router_1, ListComponent;
+    var core_1, articles_service_1, router_1, authentication_service_1, ListComponent;
     return {
         setters: [
             function (core_1_1) {
@@ -21,17 +21,22 @@ System.register(["@angular/core", "../articles.service", "@angular/router"], fun
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (authentication_service_1_1) {
+                authentication_service_1 = authentication_service_1_1;
             }
         ],
         execute: function () {
             ListComponent = /** @class */ (function () {
-                function ListComponent(_articlesService, _router, _route) {
+                function ListComponent(_articlesService, _router, _route, _authenticationService) {
                     this._articlesService = _articlesService;
                     this._router = _router;
                     this._route = _route;
+                    this._authenticationService = _authenticationService;
                 }
                 ListComponent.prototype.ngOnInit = function () {
                     var _this = this;
+                    this.user = this._authenticationService.user;
                     this._articlesService.list().subscribe(function (articles) { return _this.articles
                         = articles; });
                 };
@@ -46,7 +51,7 @@ System.register(["@angular/core", "../articles.service", "@angular/router"], fun
                     }),
                     __metadata("design:paramtypes", [articles_service_1.ArticlesService,
                         router_1.Router,
-                        router_1.ActivatedRoute])
+                        router_1.ActivatedRoute, authentication_service_1.AuthenticationService])
                 ], ListComponent);
                 return ListComponent;
             }());

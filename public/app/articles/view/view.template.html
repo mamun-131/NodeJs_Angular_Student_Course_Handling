@@ -26,13 +26,13 @@ fullName
                       <ul class="nav navbar-nav">
                             <li ><a [routerLink]="['/articles']"><i class="fa fa-list"></i>List Course</a></li>  
                          <li ><a [routerLink]="['/articles/create']"><i class="fa fa-sign-in"></i>Create Course</a></li>                      
- 
+                         <li > <a *ngIf="user" href="/api/auth/signout"><i class="fa fa-sign-out"></i>Signout</a> </li>
                       </ul>
-                      <ul class="navbar-nav ml-auto">
+                      <ul class="navbar-nav ml-auto"  *ngIf="user">
                             <li class="nav-item">
-                              <a class="nav-link" *ngIf="user"><i class="fa fa-sign-fun"></i>Login Name: {{user.fullName}}</a>
+                              <a class="nav-link"><i class="fa fa-sign-fun"></i>Login Name: {{user.fullName}}</a>
                             </li>
-   
+                        
                           </ul>
                     </div>
                   </div>

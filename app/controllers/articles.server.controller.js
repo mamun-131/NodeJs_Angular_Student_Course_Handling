@@ -1,5 +1,5 @@
 ﻿const mongoose = require('mongoose');
-const Course = mongoose.model('Course');
+const Article = mongoose.model('Article');
 let studentId;
 //
 function getErrorMessage(err) {
@@ -14,7 +14,7 @@ function getErrorMessage(err) {
 };
 //
 exports.create = function (req, res) {
-    const article = new Course(req.body);
+    const article = new Article(req.body);
     article.creator = req.user;
     article.save((err) => {
         if (err) {
@@ -29,7 +29,7 @@ exports.create = function (req, res) {
 //
 exports.list = function (req, res) {
     var query = { creator: { _id: studentId}};
-    Course.find().sort('-created').populate('creator', 'idSeleted firstName lastName fullName').exec((err, articles) => {
+    Article.find().sort('-created').populate('creator', 'idSeleted firstName lastName fullName').exec((err, articles) => {
 if (err) {
         return res.status(400).send({
             message: getErrorMessage(err)
@@ -75,7 +75,7 @@ if (err) {
 //
 exports.articleByID = function (req, res, next, id) {
     console.log(id);
-    Course.findById(id).populate('creator', 'idSeleted firstName lastName fullName').exec((err, article) => {if (err) return next(err);
+    Article.findById(id).populate('creator', 'idSeleted firstName lastName fullName').exec((err, article) => {if (err) return next(err);
         console.log(article);
         if (!article) return next(new Error('Failed to load article '
         + id));
@@ -86,7 +86,7 @@ exports.articleByID = function (req, res, next, id) {
 
 exports.articleByCourseID = function (req, res, next, id) {
     console.log(id);
-    Course.find({courseCode: id}).populate('creator', 'idSeleted firstName lastName fullName').exec((err, article) => {if (err) return next(err);
+    Article.find({courseCode: id}).populate('creator', 'idSeleted firstName lastName fullName').exec((err, article) => {if (err) return next(err);
       //  console.log(article);
         if (!article) return next(new Error('Failed to load article '
         + id));
@@ -102,7 +102,7 @@ exports.articleByStudentID = function (req, res, next, id) {
    console.log(id);
    // let query = {creator: { _id: id}};
     var query = { creator: { _id: id}};
-    Course.find(query).populate('creator', 'idSeleted firstName lastName fullName').exec((err, article) => {if (err) return next(err);
+    Article.find(query).populate('creator', 'idSeleted firstName lastName fullName').exec((err, article) => {if (err) return next(err);
         console.log(article);
         if (!article) return next(new Error('Failed to load article '
         + id));
@@ -118,21 +118,18 @@ exports.read = function (req, res) {
 };
 //
 exports.update = function (req, res) {
-    const courseeee = req.article;
-    console.log(courseeee);
-    
-    const course = new Course(req.body);
-    course.courseCode = req.body.courseCode;
-    course.courseName = req.body.courseName;
-    course.section = req.body.section;
-    course.semester = req.body.semester;
-    course.save((err) => {
+    const article = req.article;
+    article.courseCode = req.body.courseCode;
+    article.courseName = req.body.courseName;
+    article.section = req.body.section;
+    article.semester = req.body.semester;
+    article.save((err) => {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
         } else {
-            res.status(200).json(course);
+            res.status(200).json(article);
         }
     });
 };
