@@ -12,8 +12,10 @@ export class ListComponent {
         private _router: Router,
         private _route: ActivatedRoute,) { }
     ngOnInit() {
-        this._articlesService.list().subscribe(articles => this.articles
-            = articles);
+        this._articlesService.list().subscribe(articles => {
+            console.log(articles);
+            this.articles = articles}
+        );
     }
 
     aaa () {
